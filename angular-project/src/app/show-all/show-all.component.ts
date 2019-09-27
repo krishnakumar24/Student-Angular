@@ -1,3 +1,4 @@
+import { ApiFetchService } from './../service/api-fetch.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -16,33 +17,9 @@ import { Student } from '../model/Student.model';
 export class ShowAllComponent implements OnInit {
   array:Object;
 
-
-
-  constructor(private http :HttpClient) { 
-
-  }
+  constructor(private fetch:ApiFetchService) { }
 
   ngOnInit() {
-    return this.http.get('http://localhost:8080/api/students').subscribe(response=>this.print(response));
+    return this.fetch.showAll().subscribe(response=>{this.array=response});
   }
-  // method():Observable<Student[]>{
-  //   return this.http.get('http://localhost:8080/students').map(res=>{
-  //     return res.json().results.map(item=>{
-  //       return new Student(
-  //       item.id,
-  //       item.name,
-  //       item.department,
-  //       item.email
-  //       );
-  //     });
-  //   });
-  // }
-
-
-
-print(response){
-  this.array=response;
-}
-
-  
 }

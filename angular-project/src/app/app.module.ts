@@ -1,3 +1,4 @@
+import { ApiFetchService } from './service/api-fetch.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -28,7 +29,7 @@ import { TestComponent } from './test/test.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApiFetchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

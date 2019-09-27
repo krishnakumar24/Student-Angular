@@ -1,11 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class ApiFetchService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  showAll(){
+    return this.http.get('http://localhost:8080/api/students');
+  }
 
   
 }
