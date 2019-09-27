@@ -1,0 +1,13 @@
+.search-place{
+    background:#3356c83b;
+    /* color: white; */
+    border-radius: 7px;
+    font-size: 16px;
+    padding-left: 27px;
+    padding: 12px 20px 1px;
+    display: none;
+}
+
+.toggling{
+    display:block;
+}

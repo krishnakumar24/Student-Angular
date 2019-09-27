@@ -1,0 +1,9 @@
+header{
+    height: 10px;
+    background-color: #3357c8
+}
+div .vertical-line{
+    position:absolute;
+    transform: rotate(90);
+    color: red;
+}

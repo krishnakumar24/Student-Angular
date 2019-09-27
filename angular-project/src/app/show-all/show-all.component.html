@@ -1,0 +1,36 @@
+<!-- <table>
+    <th>ID</th>
+    <th>Name</th>
+    <th>department</th>
+    <th>email</th>
+    <tr *ngFor='let student of array'>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.department}}</td>
+        <td>{{student.email}}</td>
+    </tr>
+</table>
+ -->
+
+
+<div class="col-8">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"># ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let student of array'>
+        <th scope="row">{{student.id}}</th>
+        <td>{{student.name}}</td>
+        <td>{{student.department}}</td>
+        <td>{{student.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* *{
+	box-sizing: border-box;
+}
+
+
+html,body{
+	margin: 0;
+    padding:0;
+    background: #eeeeee;
+} */
+ul{
+	padding-left: 0;
+}
+li{
+	list-style: none;
+}
+.main-section{
+	height: 100vh;
+}
+.left-nav{
+	    padding: 20px 0px 20px 0px;
+}
+div#left-nav > div{
+	margin-bottom: 25px;
+}
+.left-nav .brand{
+	padding-left: 30px;
+    font-weight: bold;
+}
+
+.left-nav-icon{
+    padding: 5px 15px 5px 5px;
+	color: gray;
+}
+.left-nav p{
+	display: inline-block;
+	margin-bottom: 0px;
+}
+.left-nav ul{
+	padding-left: 0px;
+}
+.left-nav li{
+    padding: 10px 23px;
+	border-left:solid 5px transparent;
+}
+.left-nav li:hover{
+	background-color: #f1f3f9;
+	border-left-color: #3357c8;
+	color: #3357c8; 
+	cursor: pointer;
+}
+.left-nav li:hover .left-nav-icon{
+		color: #3357c8; 
+}
+.left-nav .heading{
+	font-size: 0.75rem;
+    color: gray;
+    padding-left: 30px;
+}
+.main-section{
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
