@@ -1,18 +1,16 @@
-<router-outlet></router-outlet>
-<!-- <header></header> -->
-<div class="vertical-line">
-  
-</div>
+
+
 <div class="container-fluid main-section">
   <div class="row">
     <div class="col-2 left-nav border-right" id="left-nav">
-      <app-side-nav (sideNavClicked)='onSideNavClicked($event)'></app-side-nav>
+      <app-side-nav></app-side-nav>
     </div>
     <div class="col-10 position-relative main-section">
-      <app-show-all *ngIf='showAll'></app-show-all>
+      <!-- <app-show-all *ngIf='showAll'></app-show-all>
       <app-search *ngIf='search'></app-search>
       <app-delete *ngIf='delete' ></app-delete>
-      <app-add-student *ngIf='add'></app-add-student>
+      <app-add-student *ngIf='add'></app-add-student> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

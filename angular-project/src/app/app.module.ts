@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { DeleteComponent } from './delete/delete.component';
 import { AddStudentComponent } from './add-student/add-student.component';
-import { DisplayStudentComponent } from './display-student/display-student.component';
 import { TestComponent } from './test/test.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { TestComponent } from './test/test.component';
     SearchComponent,
     DeleteComponent,
     AddStudentComponent,
-    DisplayStudentComponent,
     TestComponent,
   ],
   imports: [
