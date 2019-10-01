@@ -1,24 +1,40 @@
 <div class="col-md-5">
-    <form>
-      <div class="form-group">
-        <label>Search Student Record:</label>
-        <input type="text" 
-        [(ngModel)]="searchId"
-        name="searchId"
-        class="form-control" placeholder="Enter the id to be searched..." required>
-      </div>
-      <button 
-      type="submit" 
-      (click)="onSearchClicked()"
-      class="btn btn-success">Search</button>
-    </form>
-  </div>
-    <div class="col-md-5 mt-5 search-place"
-    [ngClass]="{'toggling': toggleClass}">
-      <ul *ngIf='toggleClass'>
-          <li><label>ID:</label>{{responseData.id}}</li>
-          <li><label>Name:</label>{{responseData.name}}</li>
-        <li><label> Email:</label>{{responseData.email}}</li>
-        <li><label> Department:</label>{{responseData.department}}</li>
-    </ul>
-  </div>
+  <form>
+    <div class="form-group">
+      <label>Search Student Record:</label>
+      <input type="text" [(ngModel)]="searchId" name="searchId" class="form-control"
+        placeholder="Enter the id to be searched...">
+    </div>
+    <button type="submit" (click)="onSearchClicked()" class="btn btn-success">Search</button>
+    <small class="form-text "[ngClass]="{'toggle-alert': showAlert}" *ngIf="showAlert">No records found...</small>
+  </form>
+</div>
+<div class="col-md-5 mt-5 search-place" [ngClass]="{'toggling': toggleClass}">
+  <div *ngIf='toggleClass'>
+    <!-- <div *ngFor="let student of responseData"> -->
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"># ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let student of responseData'>
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.name}}</td>
+                <td>{{student.department}}</td>
+                <td>{{student.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+    <!-- </div> -->
+    <!-- <li><label>ID:</label>{{responseData.id}}</li>
+    <li><label>Name:</label>{{responseData.name}}</li>
+    <li><label> Email:</label>{{responseData.email}}</li>
+    <li><label> Department:</label>{{responseData.department}}</li> -->
+
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiFetchService } from '../service/api-fetch.service';
 
 @Component({
   selector: 'app-search',
@@ -10,41 +11,45 @@ export class SearchComponent implements OnInit {
   searchId = '';
   url: string;
   responseData: any = [];
+  showAlert=false;
   //to show or not using structural directives
   toggleClass = false;
   show=false;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private apiFetchServise:ApiFetchService) { }
 
   ngOnInit() {
   }
   onSearchClicked() {
     if(this.searchId!==''){
-    //for next iteration it should be reset
-    this.url = '';
-    this.url = 'http://localhost:8080/api/students/' + this.searchId;
-    this.searchId = '';
-    console.log(this.url);
-    console.log(this.searchId);
-    return this.http.get(this.url).subscribe(response => this.dataEntry(response));
+    return this.apiFetchServise.search(this.searchId).subscribe(response => this.dataEntry(response));
+    // return this.http.get(this.url).subscribe(response => this.dataEntry(response));
     }
   }
 
   dataEntry(response) {
-    if(response!==null){
+    // if(response!==null){
+    //   this.toggleClass=true;
+    // this.responseData = response;
+    // console.log(this.responseData);
+    // this.showAlert=false;
+    // }
+    // else{
+    //   this.toggleClass=false;
+    //   this.showAlert=true;
+      
+    // }
+    this.responseData=response;
+    if(this.responseData.length!==0){
       this.toggleClass=true;
-    this.responseData = response;
-    console.log(this.responseData);
-    }else{
+      this.showAlert=false;
+    }
+    else{
       this.toggleClass=false;
-      alert("No record found")
-
+      this.showAlert=true;
     }
 
-
-
-    // let jsonObject = response.json() as Object;
-    // let fooInstance = plainToClass(Models.Foo, jsonObject);
-    // return fooInstance;
+    // this.searchId='';
   }
 
 

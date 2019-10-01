@@ -1,8 +1,10 @@
-<p>test works!</p>
-<input type="text"[(ngModel)]='name'>
+<div style="text-align:center">
+        <div [innerHtml]='msg'></div>
+        <label>
+            <input type="file" (change)="selectFile($event)">
+            </label>
+            <button [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+    </div>
 
-<button
-(click)="method()"
->check</button>
-{{name}}
+
 

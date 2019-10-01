@@ -11,3 +11,21 @@
 .toggling{
     display:block;
 }
+tr:nth-of-type(even) td{
+    /* background-color: lighten(#4ECDC4, 35%); */
+    background-color: #3356c82b;
+  }
+tr:nth-of-type(even) th{
+    background-color: #3356c82b;
+} 
+thead{
+    background:#3356c8;
+    color:white;
+}
+small{
+    display: none;
+}
+.toggle-alert{
+    display:block;
+
+}

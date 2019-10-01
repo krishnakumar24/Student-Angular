@@ -4,7 +4,8 @@
       <label>Delete Student Record:</label>
       <input type="text" [(ngModel)]="deleteId" name='deleteId' class="form-control"
         placeholder="Enter the id to be deleted..." required>
-        <small class="form-text "[ngClass]="{'toggle-green': check}" *ngIf="toggleMsg">{{msg}}</small>    </div>
+        <small class="form-text "[ngClass]="{'toggle-green': check}" *ngIf="toggleMsg">{{msg}}</small>
+          </div>
     <button type="submit" (click)="onDeleteClicked()" class="btn btn-danger">Delete</button>
   </form>
 </div>
