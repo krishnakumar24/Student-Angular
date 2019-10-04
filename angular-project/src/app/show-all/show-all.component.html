@@ -12,25 +12,57 @@
 </table>
  -->
 
+<div class="row">
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"># ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Department</th>
+          <th scope="col">Email</th>
+          <!-- <th scope="col">Resume</th>         -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let student of array'>
+          <td (click)="onStudentClicked(student.id,student.name)" scope="row">{{student.id}}</td>
+          <td (click)="onStudentClicked(student.id,student.name)">{{student.name}}</td>
+          <td (click)="onStudentClicked(student.id,student.name)">{{student.department}}</td>
+          <td (click)="onStudentClicked(student.id,student.name)">{{student.email}}</td>
+          <!-- <td>            
+                  <input type="file" (change)="selectFile($event,student.id)">
+                  <button [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+                </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <div> -->
+    <div *ngIf="isResumePresent" class="col-md-4">
+      <h6>{{studentId}}-{{studentName}}</h6>
+      <!-- <ngx-doc-viewer [url]="fileUrl" viewer="google"></ngx-doc-viewer> -->
+      <!-- <iframe src = "../ViewerJS/#http://localhost:8080/api/file_download/3" width='520' height='350' allowfullscreen webkitallowfullscreen></iframe> -->
+      <ng2-pdfjs-viewer style="height: 70vh" #pdfpreview pdfSrc={{pdfsrc}}></ng2-pdfjs-viewer>
+      <button *ngIf="!isResumePresent" class="btn btn-primary">Upload</button>
+      <button (click)="download()" class="btn btn-primary">Download</button>
+      <button (click)="delete()" class="btn btn-danger">Delete</button>
+      <!-- <button class="btn btn-primary">Update</button> -->
+      <!-- <app-preview [pdfsrc]="pdfsrc" ></app-preview> -->
+    </div>
+    <div *ngIf="togglePreview" class="col-md-4">
+        <h6>{{studentId}}-{{studentName}}</h6>
+      <!-- <ngx-doc-viewer [url]="fileUrl" viewer="google"></ngx-doc-viewer> -->
+      <!-- <iframe src = "../ViewerJS/#http://localhost:8080/api/file_download/3" width='520' height='350' allowfullscreen webkitallowfullscreen></iframe> -->
+      <!-- <ng2-pdfjs-viewer #pdfpreview pdfSrc={{pdfsrc}}></ng2-pdfjs-viewer> -->
+      <h5>No PDF found</h5>
+      <input type="file" (change)="selectFile($event)">
+      <button *ngIf="!isResumePresent" (click)="upload()" class="btn btn-primary">Upload</button>
+      <small class="form-text " *ngIf="isUploaded">Successfully uploaded</small>
+      <!-- <button (click)="download()" class="btn btn-primary">Download</button> -->
+      <!-- <button class="btn btn-primary">Update</button> -->
+      <!-- <app-preview [pdfsrc]="pdfsrc" ></app-preview> -->
+    </div>
 
-<div class="col-8">
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col"># ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Department</th>
-        <th scope="col">Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let student of array'>
-        <th scope="row">{{student.id}}</th>
-        <td>{{student.name}}</td>
-        <td>{{student.department}}</td>
-        <td>{{student.email}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
+  <!-- </div> -->
+  </div>

@@ -9,3 +9,13 @@ thead{
     background:#3356c8;
     color:white;
 }
+/* ng2-pdfjs-viewer{
+    height: 70vh
+} */
+
+small{
+    color: green;
+}
+/* .toggle-green{
+    color: green;
+} */

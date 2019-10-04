@@ -12,7 +12,9 @@ import { SearchComponent } from './search/search.component';
 import { DeleteComponent } from './delete/delete.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { TestComponent } from './test/test.component';
-
+// import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { PreviewComponent } from './preview/preview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +24,16 @@ import { TestComponent } from './test/test.component';
     DeleteComponent,
     AddStudentComponent,
     TestComponent,
+    PreviewComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    PdfJsViewerModule
+    // NgxDocViewerModule
   ],
   providers: [ApiFetchService],
   bootstrap: [AppComponent]
